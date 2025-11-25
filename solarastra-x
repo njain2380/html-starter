@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLARASTRA Documentation & FAQ Repository</title>
+    <style>
+        :root {
+            --primary-color: #f9730a; /* Orange for SOLARASTRA */
+            --secondary-color: #0d9488; /* Teal/Green for contrast */
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: white;
+            padding: 15px 5%;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .logo-text {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        h1, h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        /* Documentation Section */
+        .documentation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .doc-card {
+            background-color: #fcfcfc;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .doc-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+        .doc-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* FAQ Section */
+        #faq-search {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 25px;
+            border: 2px solid #ddd;
+            border-radius: var(--border-radius);
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        #faq-search:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background-color: #fff;
+            padding: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--secondary-color);
+            transition: background-color 0.3s;
+        }
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: #fcfcfc;
+            border-top: 1px solid #eee;
+        }
+        .faq-answer p {
+            padding: 15px 0;
+            margin: 0;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 200px; /* Adjust based on expected content size */
+            transition: max-height 0.5s ease-in;
+        }
+        .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+        .faq-item.open .toggle-icon {
+            transform: rotate(45deg);
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #d96200;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYgLS0+PHBhdGggZmlsbD0iI2Y5NzMwYWIiIGQ9Ik0yNTYgNTFjNi43IDAgMTMuMiAzLjQgMTYuOSA5bDE0IDIzLjljMTguMSAzMC43IDQ5LjQgNTIuMiA4NC41IDU5LjZsMjYuNyA1Ljc2YzEzLjQgMi44OSAyMy41IDE0LjcgMjMuNSA2LjM2diM2NGM4LjUgMTEuNSAxOS4yIDIzLjggMzIuOCA0NS4zTDI2NS42IDI5MS4yYy0xOC45IDktMzcuOC0zLjYtNTYuNy00LjUgLTIzLjUtNS4xLTM1LjUtMTcuNy00Ny00Mi44TDU3LjMgMzIyLjNjLTIuMyA1LjYtNiA5LjYtMTIuNyAxMi4xTDQ5LjQgMzM2Yy0xLjIgMy4yLS45OSA2LjMgMS40NyA5LjA2TDU1LjggNDAxLjFjLTIuNjkgMS40Ni03LjEzIDMtMTMuMiAzLjFsLTIzLjkgMTQuMWMtNS43IDMuNy05LjEgMTAuMy05LjEgMTYuOSAxLjMgMzEuMiAzLjMgNTMuNyAxMy43IDc0LjEgMTcuMiAzNC4yIDQ0LjEgNjQuMyA4Ny41IDg4LjUgNDcuNCAyNi41IDEwNS42IDQzLjggMTY4LjEgNDMuOCAxMjMuNSA1LjEgMjEwLjUtNzUuMyAyMjEuNi0xNTcuNCA0LjYtMzcuNS0xLjQtNjkuNy0xNC40LTk4LjEtMTItMTIuMi0xOC44LTI3LjItMjEuMi00NC41bC0yLjUtMTcuNmMtLjItMy44LjYtNy42IDIuMS0xMC45bDE2LjMtMjguMWM2LjUtMTExLjcgMTkuMS0yMTkuMiAzLjMtMzI5LjNjLS41LTEuMi0xLjMtMi4zLTIuNC0zLjMtLjktLjgtMS44LTEuNC0yLjktMS44LTMtMS42LTYuMi0yLjUtOS41LTIuNWgtNzYuNGMtMjIuNyA5LjUtNDUuMyAxOS40LTY5LjEgMjguM0MyNzQuMiAxMDQuOSAyNjUuNSAxMTYuNSAyNTYgMTI5LjdWMzY4LjljMS40IDguNS0uMyAxNi45LTQuNCAyNC4xcy0xMi42IDExLjgtMjEuMyAxNS45bC0xNiA3LjRjLTkuMSAzLjktMTguOCAzLjgtMjguMS0uNHMtMTUuNi0xMS4zLTE4LjYtMjEuN0MyMDAgMzU2LjIgMjI0LjMgMjgzLjUgMjU2IDI3MiAxMDguNyAyODcuMyA1MS4yIDQxMy45IDYyLjkgNTA3YzEuOSAxNS44IDMuNyAyOC43IDYgNDAuNiAzLjUgMTcuOCAxMi42IDMzLjEgMjYuMyA0NS4zIDE0LjcgMTMuMSAzMS4xIDI0LjMgNDkuMyAzMy40IDMyLjUgMTYuNiA2Ny4zIDI2LjEgMTA0LjEgMjguNCA0OS43IDMuMSAxMDUtMTIuOCAxNDkuNS00NC41IDQ2LjYtMzIuNSAzNi4xLTg5LjItMjYuNC0xMTkuMy0xMS43LTUuNy0yMy45LTEwLjktMzUuNi0xNi41LTEzLjYtNi40LTI2LjYtMTMuMi0zOC4yLTIyLjFDMTgwLjMgMzg4LjIgMTEwLjMgMjk2LjcgMjU2IDI1NiAxOTIuOCAxMjEuMyAxMzUuNSAxNS4zIDI1NiAwem0yMy0xNy40Yy0xMC4yIDEwLjItMTYuMyAyMy4zLTE3LjkgMzcuMUwyNTYgODMuMWMyLjEgMTguMy0uNiAzNi45LTcuMyA1NC41LTIuOSAxNy4yLTguNyAzNC0xNi4zIDQ5LjlsMjIuOC0yMS44Yy0xMC42LTEzLjEtMjIuNy0yNS4xLTM2LjUtMzUuNmMtMTIuNy05LjctMjYuMS0xOC4xLTQwLjItMjUuNkwyNzkgMzkuNHoiLz48L3N2Zy>" alt="SOLARASTRA Logo" class="logo-img">
+            <span class="logo-text">SOLARASTRA</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Comprehensive Solar Rooftop Knowledge Base</h1>
+        <p>This repository provides essential documentation and a searchable list of Frequently Asked Questions related to solar rooftop installation, subsidies, and the PM Surya Ghar: Muft Bijli Yojana, referencing official sources for accuracy.</p>
+
+        <h2 id="download">FAQ Download Center</h2>
+        <p>For offline use, you can download the entire FAQ list as a JSON file.</p>
+        <a id="download-link" href="#" class="download-btn" download="solarastra_faqs.json">
+            Download FAQs (JSON File)
+        </a>
+
+        <hr>
+
+        <h2 id="documentation">Official Scheme Documentation</h2>
+        <p>Reference materials from the **Ministry of New and Renewable Energy (MNRE)** and the **PM Surya Ghar National Portal**. Always refer to the original source for the most recent updates: <a href="https://solarrooftop.pmsuryaghar.gov.in/grid_others/knowledge" target="_blank">Official Knowledge Center</a></p>
+        
+        <div class="documentation-grid">
+            <div class="doc-card">
+                <h3>Scheme Guidelines</h3>
+                <p>Detailed official document covering objectives, implementation period, and financial outlay.</p>
+                <a href="https://pmsuryaghar.gov.in/" target="_blank">View Official Guidelines & Updates</a>
+            </div>
+            <div class="doc-card">
+                <h3>Consumer Application Manual</h3>
+                <p>Step-by-step procedure for registration, application submission, and subsidy claims on the portal.</p>
+                <a href="https://pmsuryaghar.gov.in/consumer" target="_blank">Check Application Procedure</a>
+            </div>
+            <div class="doc-card">
+                <h3>Subsidy Structure & CFA</h3>
+                <p>Information on Central Financial Assistance (CFA) amounts for different system capacities (e.g., up to 2kW, 3kW, etc.).</p>
+                <a href="https://www.pmsuryaghar.gov.in/" target="_blank">Review Subsidy Details</a>
+            </div>
+            <div class="doc-card">
+                <h3>Technical Standards & Net Metering</h3>
+                <p>Specifications for components, installation quality, and rules for grid interconnection and net-metering.</p>
+                <a href="https://solarrooftop.pmsuryaghar.gov.in/" target="_blank">Check Technical Documents</a>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2 id="faqs">Searchable FAQ Repository</h2>
+
+        <input type="text" id="faq-search" placeholder="Search questions or keywords (e.g., subsidy, documents, 1 kW area)...">
+
+        <div id="faq-list">
+            </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SOLARASTRA Documentation. Reference data sourced from PM Surya Ghar National Portal.</p>
+    </footer>
+
+    <script>
+        const faqs = [
+            {
+                q: "Who is eligible to apply for the PM Surya Ghar scheme?",
+                a: "Only **Residential Consumers** or Residential Welfare Societies (RWA) are eligible. Commercial, industrial, and institutional consumers are generally not eligible for the residential subsidy on this portal."
+            },
+            {
+                q: "What is the maximum Central Financial Assistance (CFA)/subsidy available?",
+                a: "The total CFA is capped at **₹78,000** for systems larger than 3 kW. This is calculated as ₹30,000 per kW for the first 2 kW, and ₹18,000 per kW for additional capacity up to 3 kW."
+            },
+            {
+                q: "What documents are mandatory during the application process?",
+                a: "Mandatory documents include a recent **Electricity Bill**, **Aadhaar Card**, and **Bank Account details** (such as a Cancelled Cheque or Passbook copy) to facilitate the direct subsidy transfer."
+            },
+            {
+                q: "How much shadow-free rooftop area is required for a 1 kW solar system?",
+                a: "A 1 kW rooftop system typically requires about **10 square metres** (approx. 107 sq. ft.) of shadow-free area for optimal installation, although this may vary based on module efficiency."
+            },
+            {
+                q: "How long does it take to receive the subsidy amount after installation?",
+                a: "Once the solar system is installed, inspected, and successfully commissioned, the subsidy amount is generally transferred directly to the beneficiary's bank account within **30 days** of DISCOM approval."
+            },
+            {
+                q: "Can I install the system using any vendor?",
+                a: "No. For availing the CFA/subsidy, the rooftop solar system must be installed through an **MNRE-registered vendor** empanelled under the concerned Electricity Distribution Company (DISCOM)."
+            },
+            {
+                q: "What is Net Metering?",
+                a: "Net Metering uses a **bi-directional meter** to record the electricity consumed from the grid and the surplus electricity exported to the grid by your solar system. You only pay for the 'net' consumption."
+            },
+            {
+                q: "What happens if there is a mismatch in name between the electricity bill and the bank account?",
+                a: "The name of the consumer must be **identical** on both the bank account and the DISCOM electricity bill for the subsidy to be processed successfully. Any mismatch must be rectified with the bank or DISCOM."
+            },
+            {
+                q: "Can I change my chosen vendor after application?",
+                a: "Yes, a consumer may change their selected vendor on the portal, but this must be done **before** uploading the Vendor Consumer Work Agreement."
+            }
+        ];
+
+        const faqList = document.getElementById('faq-list');
+        const searchInput = document.getElementById('faq-search');
+        const downloadLink = document.getElementById('download-link');
+
+        // Function to render FAQ items
+        function renderFaqs(filter = '') {
+            faqList.innerHTML = '';
+            const lowerCaseFilter = filter.toLowerCase();
+
+            const filteredFaqs = faqs.filter(item => 
+                item.q.toLowerCase().includes(lowerCaseFilter) || 
+                item.a.toLowerCase().includes(lowerCaseFilter)
+            );
+
+            if (filteredFaqs.length === 0) {
+                faqList.innerHTML = '<p style="text-align: center; padding: 20px; color: #777;">No matching FAQs found. Try a different keyword.</p>';
+                return;
+            }
+
+            filteredFaqs.forEach((item, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item';
+                faqItem.innerHTML = `
+                    <div class="faq-question" data-index="${index}">
+                        ${item.q}
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>${item.a}</p>
+                    </div>
+                `;
+                faqList.appendChild(faqItem);
+            });
+
+            // Re-attach event listeners after rendering
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.closest('.faq-item');
+                    item.classList.toggle('open');
+                });
+            });
+        }
+
+        // Search functionality
+        searchInput.addEventListener('keyup', (e) => {
+            renderFaqs(e.target.value);
+        });
+
+        // Initialize FAQ list on load
+        renderFaqs();
+
+        // Download functionality (outside of html structure)
+        function setupDownload() {
+            const faqsJson = JSON.stringify(faqs, null, 2);
+            const blob = new Blob([faqsJson], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            downloadLink.href = url;
+        }
+        setupDownload();
+
+    </script>
+</body>
+</html>
