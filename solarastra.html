@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solarastra India | Powering Every Indian Roof</title>
+    <meta name="description" content="Switch to solar with Solarastra. Avail PM Surya Ghar subsidy, reduce electricity bills to zero, and get expert installation across India.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        solar: {
+                            100: '#FFF9C4',
+                            400: '#FBC02D',
+                            500: '#FF9800', // Deep Orange
+                            600: '#F57C00',
+                        },
+                        navy: {
+                            800: '#1A237E',
+                            900: '#0D1B2A',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Background Pattern */
+        .hero-bg {
+            background-color: #0D1B2A;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF9800' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #FBC02D, #F57C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-solar-panel text-solar-500 text-3xl"></i>
+                    <span class="font-heading font-bold text-2xl text-navy-900 tracking-tight">Solarastra</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#benefits" class="text-gray-700 hover:text-solar-600 font-medium transition">Benefits</a>
+                    <a href="#subsidy" class="text-gray-700 hover:text-solar-600 font-medium transition">Govt Subsidy</a>
+                    <a href="#calculator" class="text-gray-700 hover:text-solar-600 font-medium transition">Calculator</a>
+                    <a href="#process" class="text-gray-700 hover:text-solar-600 font-medium transition">How It Works</a>
+                    <a href="#contact" class="bg-solar-500 hover:bg-solar-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg transform hover:-translate-y-0.5 transition duration-200">
+                        Get Free Quote
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-solar-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#benefits" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-solar-600 hover:bg-solar-100 rounded-md">Benefits</a>
+                <a href="#subsidy" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-solar-600 hover:bg-solar-100 rounded-md">Govt Subsidy</a>
+                <a href="#calculator" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-solar-600 hover:bg-solar-100 rounded-md">Calculator</a>
+                <a href="#process" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-solar-600 hover:bg-solar-100 rounded-md">How It Works</a>
+                <a href="#contact" class="block mt-4 text-center bg-solar-500 text-white px-3 py-3 rounded-md font-bold">Get Free Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 hero-bg overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center lg:text-left fade-in-up">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-solar-500/10 border border-solar-500/30 text-solar-500 font-semibold text-sm mb-6">
+                        <i class="fa-solid fa-bolt mr-2"></i> Join the PM Surya Ghar Yojana Revolution
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-heading font-extrabold text-white leading-tight mb-6">
+                        Make Your Electricity Bill <br>
+                        <span class="gradient-text">Zero Rupees.</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Harness the Indian sun to power your home. Get up to <span class="text-white font-bold">₹78,000 subsidy</span> directly from the government and secure your family against rising tariffs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#calculator" class="bg-solar-500 hover:bg-solar-600 text-white text-lg px-8 py-4 rounded-full font-bold shadow-[0_0_20px_rgba(255,152,0,0.4)] transition transform hover:scale-105">
+                            Calculate Savings
+                        </a>
+                        <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-navy-900 text-lg px-8 py-4 rounded-full font-bold transition">
+                            Talk to Expert
+                        </a>
+                    </div>
+                    <p class="mt-6 text-sm text-gray-400">
+                        <i class="fa-solid fa-check-circle text-green-500 mr-1"></i> 25 Year Warranty
+                        <span class="mx-2">|</span>
+                        <i class="fa-solid fa-check-circle text-green-500 mr-1"></i> 0% Interest EMI Options
+                    </p>
+                </div>
+
+                <!-- Hero Image Illustration -->
+                <div class="relative fade-in-up delay-100 hidden lg:block">
+                    <!-- Decorative blobs -->
+                    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 bg-solar-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+                    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+                    
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+                        <!-- Placeholder for Hero Image - Simulating a modern Indian house with solar -->
+                        <div class="bg-gray-800 h-[400px] w-full flex flex-col items-center justify-center text-gray-400 group relative">
+                            <!-- Overlay Content simulating image -->
+                            <img src="/api/placeholder/600/400" alt="Indian Home with Solar Panels" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                            <div class="z-10 text-center">
+                                <i class="fa-solid fa-house-chimney text-6xl text-white mb-4"></i>
+                                <h3 class="text-2xl font-bold text-white">Indian Roofs, Solar Proof.</h3>
+                            </div>
+                            <!-- Live Savings Badge -->
+                            <div class="absolute bottom-6 right-6 bg-white p-4 rounded-xl shadow-lg animate-bounce z-20">
+                                <p class="text-xs text-gray-500 uppercase font-bold">Est. Monthly Savings</p>
+                                <p class="text-2xl font-bold text-green-600">₹3,500+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-10 -mt-8 relative z-20 shadow-lg mx-4 lg:mx-12 rounded-xl border border-gray-100">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100">
+            <div class="p-4">
+                <div class="text-4xl font-bold text-navy-900 mb-1">500+</div>
+                <div class="text-sm text-gray-500 font-medium">Homes Solarised</div>
+            </div>
+            <div class="p-4">
+                <div class="text-4xl font-bold text-solar-500 mb-1">₹10Cr+</div>
+                <div class="text-sm text-gray-500 font-medium">Electricity Saved</div>
+            </div>
+            <div class="p-4">
+                <div class="text-4xl font-bold text-navy-900 mb-1">25 Yrs</div>
+                <div class="text-sm text-gray-500 font-medium">Performance Warranty</div>
+            </div>
+            <div class="p-4">
+                <div class="text-4xl font-bold text-solar-500 mb-1">100%</div>
+                <div class="text-sm text-gray-500 font-medium">Subsidy Assistance</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section (The Core Requirement) -->
+    <section id="benefits" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-base text-solar-600 font-bold tracking-wide uppercase">Why Choose Solarastra?</h2>
+                <p class="mt-2 text-3xl leading-8 font-heading font-bold text-gray-900 sm:text-4xl">
+                    Benefits Designed for Indian Homes
+                </p>
+                <p class="mt-4 text-xl text-gray-500">
+                    From reducing heat on your top floor to earning from the DISCOM, the advantages go beyond just savings.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 fade-in-up">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-indian-rupee-sign text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reduce Bills by up to 90%</h3>
+                    <p class="text-gray-600">
+                        Stop paying high tiered tariffs. With a properly sized system, you can generate enough power to cover your ACs, geysers, and appliances, bringing your bill close to zero.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 fade-in-up">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-network-wired text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Net Metering Advantage</h3>
+                    <p class="text-gray-600">
+                        Don't waste excess energy. Export unused power to the grid during the day and get credits from your state DISCOM to offset your night usage.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 fade-in-up">
+                    <div class="w-14 h-14 bg-solar-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-hand-holding-dollar text-2xl text-solar-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Govt. Subsidy Support</h3>
+                    <p class="text-gray-600">
+                        We handle the paperwork. Avail Central Financial Assistance (CFA) and state-specific incentives directly into your bank account.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 fade-in-up">
+                    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-temperature-arrow-down text-2xl text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Passive Cooling Effect</h3>
+                    <p class="text-gray-600">
+                        Solar panels act as a shade for your roof, reducing the temperature of the room below by 4°C to 5°C during the harsh Indian summer.
+                    </p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 fade-in-up">
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-chart-line text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">High ROI & Property Value</h3>
+                    <p class="text-gray-600">
+                        With an ROI of 25-30%, your system pays for itself in 3-4 years. Plus, solar-equipped homes command higher resale value in the real estate market.
+                    </p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 fade-in-up">
+                    <div class="w-14 h-14 bg-teal-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-leaf text-2xl text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Green India</h3>
+                    <p class="text-gray-600">
+                        Contribute to India's renewable goals. A 3kW system saves approximately 4 tons of CO2 annually—equivalent to planting 60 teak trees.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scheme Section (PM Surya Ghar) -->
+    <section id="subsidy" class="py-20 bg-navy-900 text-white relative overflow-hidden">
+        <!-- Background graphics -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-navy-800 transform -skew-x-12 translate-x-20 opacity-50"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2">
+                    <div class="inline-block bg-solar-500 text-white text-xs font-bold px-3 py-1 rounded-sm mb-4">NOW ACTIVE</div>
+                    <h2 class="text-3xl md:text-5xl font-heading font-bold mb-6">
+                        PM Surya Ghar: <br>Muft Bijli Yojana
+                    </h2>
+                    <p class="text-gray-300 text-lg mb-6">
+                        The Government of India has launched a massive initiative to provide free electricity to households. As a registered vendor, Solarastra helps you claim the maximum subsidy benefit.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+                            <span><strong>₹30,000 Subsidy</strong> for 1 kW systems.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+                            <span><strong>₹60,000 Subsidy</strong> for 2 kW systems.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+                            <span><strong>₹78,000 Subsidy</strong> for 3 kW systems and above.</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-white text-navy-900 hover:bg-gray-100 font-bold px-8 py-3 rounded-md transition">Check Eligibility</a>
+                </div>
+                <div class="md:w-1/3 bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                    <div class="text-center">
+                        <i class="fa-solid fa-file-invoice-dollar text-5xl text-solar-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Direct Benefit Transfer</h3>
+                        <p class="text-sm text-gray-300">
+                            The subsidy amount is transferred directly to your bank account within 30 days of commissioning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-heading font-bold text-gray-900">Calculate Your Savings</h2>
+                <p class="text-gray-500 mt-2">Estimate the potential of your rooftop</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+                <!-- Input Side -->
+                <div class="p-8 md:w-1/2 bg-gray-50">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Electricity Bill (Avg)</label>
+                    <div class="relative rounded-md shadow-sm mb-6">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="text-gray-500 sm:text-sm">₹</span>
+                        </div>
+                        <input type="number" id="billInput" class="focus:ring-solar-500 focus:border-solar-500 block w-full pl-7 pr-12 sm:text-lg border-gray-300 rounded-md py-3" placeholder="e.g. 3000" oninput="calculateSolar()">
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>Roof Space Needed:</span>
+                            <span class="font-bold" id="roofSpace">0 sq.ft</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>System Size:</span>
+                            <span class="font-bold" id="systemSize">0 kW</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xs text-gray-400 mt-8">*Estimates are approximate based on avg Indian sunlight hours & tariffs.</p>
+                </div>
+
+                <!-- Result Side -->
+                <div class="p-8 md:w-1/2 bg-navy-900 text-white flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mr-10 -mt-10 w-32 h-32 bg-solar-500 rounded-full opacity-20 blur-xl"></div>
+                    
+                    <div class="relative z-10">
+                        <h4 class="text-gray-300 text-sm uppercase tracking-wide mb-1">Annual Savings</h4>
+                        <div class="text-4xl font-bold text-solar-400 mb-6">₹ <span id="annualSavings">0</span></div>
+                        
+                        <h4 class="text-gray-300 text-sm uppercase tracking-wide mb-1">Estimated Subsidy</h4>
+                        <div class="text-2xl font-bold text-green-400 mb-6">₹ <span id="subsidyAmount">0</span></div>
+
+                        <button onclick="document.getElementById('contact').scrollIntoView()" class="w-full bg-solar-500 hover:bg-solar-600 text-white font-bold py-3 rounded-lg transition mt-2">
+                            Get Detailed Proposal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="process" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-heading font-bold text-gray-900">Seamless Transition to Solar</h2>
+            </div>
+
+            <div class="relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center border-b-4 border-solar-500">
+                        <div class="w-16 h-16 bg-navy-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-4 border-white">1</div>
+                        <h4 class="font-bold text-lg mb-2">Site Survey</h4>
+                        <p class="text-sm text-gray-500">We visit your home to analyze shadow-free area and roof strength.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center border-b-4 border-solar-500">
+                        <div class="w-16 h-16 bg-navy-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-4 border-white">2</div>
+                        <h4 class="font-bold text-lg mb-2">Design & Quote</h4>
+                        <p class="text-sm text-gray-500">Custom 3D design and final quote inclusive of subsidy calculation.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center border-b-4 border-solar-500">
+                        <div class="w-16 h-16 bg-navy-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-4 border-white">3</div>
+                        <h4 class="font-bold text-lg mb-2">Installation</h4>
+                        <p class="text-sm text-gray-500">1-day installation by certified engineers with zero structural damage.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center border-b-4 border-solar-500">
+                        <div class="w-16 h-16 bg-navy-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-4 border-white">4</div>
+                        <h4 class="font-bold text-lg mb-2">Net Metering</h4>
+                        <p class="text-sm text-gray-500">We handle DISCOM liaisoning for your Net Meter. Turn on & Save!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-solar-50 rounded-3xl p-8 md:p-12 shadow-inner border border-solar-100 flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-heading font-bold text-navy-900 mb-4">Start Your Savings Journey</h2>
+                    <p class="text-gray-600 mb-8">Fill the form to get a free callback within 2 hours. Our experts will help you understand the subsidy process.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-phone w-10 text-solar-600 text-xl"></i>
+                            <span class="text-gray-800 font-medium">+91 98765 43210</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-envelope w-10 text-solar-600 text-xl"></i>
+                            <span class="text-gray-800 font-medium">hello@solarastra.in</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-location-dot w-10 text-solar-600 text-xl"></i>
+                            <span class="text-gray-800 font-medium">Tech Park, Bengaluru / Cyber City, Gurugram</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 bg-white p-8 rounded-2xl shadow-lg">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Our expert will call you shortly.');">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-solar-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" pattern="[0-9]{10}" required placeholder="+91" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-solar-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">State / City</label>
+                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-solar-500 focus:border-transparent">
+                        </div>
+                        <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 rounded-lg transition transform active:scale-95">
+                            Request Callback
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 mb-4 text-white">
+                    <i class="fa-solid fa-solar-panel text-solar-500 text-2xl"></i>
+                    <span class="font-heading font-bold text-xl">Solarastra</span>
+                </div>
+                <p class="text-sm max-w-sm">
+                    Solarastra is India's leading rooftop solar solution provider. We are committed to making green energy accessible and affordable for every Indian household under the PM Surya Ghar Yojana.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-solar-500">About Us</a></li>
+                    <li><a href="#subsidy" class="hover:text-solar-500">Government Subsidy</a></li>
+                    <li><a href="#" class="hover:text-solar-500">Commercial Solar</a></li>
+                    <li><a href="#" class="hover:text-solar-500">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-2xl hover:text-solar-500"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-2xl hover:text-solar-500"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-2xl hover:text-solar-500"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="text-2xl hover:text-solar-500"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs border-t border-gray-800 pt-8">
+            &copy; 2024 Solarastra Energy Pvt Ltd. All rights reserved. <br>
+            *Subsidy amounts are subject to Government approval and policy changes. Savings are estimates.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Simple Intersection Observer for Fade In Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+
+        // Solar Calculator Logic
+        function calculateSolar() {
+            const bill = parseFloat(document.getElementById('billInput').value);
+            
+            if (!bill || bill < 0) {
+                document.getElementById('annualSavings').innerText = "0";
+                document.getElementById('subsidyAmount').innerText = "0";
+                document.getElementById('systemSize').innerText = "0 kW";
+                document.getElementById('roofSpace').innerText = "0 sq.ft";
+                return;
+            }
+
+            // Assumptions for India
+            // Avg unit cost approx ₹8 (blended)
+            // 1 kW generates approx 120 units/month (4 units/day)
+            
+            const unitsConsumed = bill / 8;
+            let recommendedKw = unitsConsumed / 120;
+            
+            // Round to nearest 0.5
+            recommendedKw = Math.ceil(recommendedKw * 2) / 2;
+            if(recommendedKw < 1) recommendedKw = 1;
+
+            const roofSpaceSqFt = recommendedKw * 100; // Approx 100 sqft per kW
+            
+            // Subsidy Logic (PM Surya Ghar 2024 approx)
+            // 30k for 1kW, 60k for 2kW, 78k for 3kW+
+            let subsidy = 0;
+            if (recommendedKw < 2) {
+                subsidy = 30000;
+            } else if (recommendedKw < 3) {
+                subsidy = 60000;
+            } else {
+                subsidy = 78000;
+            }
+
+            // Annual Savings (Bill * 12 * 0.9 assuming 90% offset)
+            const annualSavings = (bill * 12 * 0.95).toFixed(0);
+
+            // Animate Numbers (Simple)
+            document.getElementById('annualSavings').innerText = parseInt(annualSavings).toLocaleString('en-IN');
+            document.getElementById('subsidyAmount').innerText = subsidy.toLocaleString('en-IN');
+            document.getElementById('systemSize').innerText = recommendedKw + " kW";
+            document.getElementById('roofSpace').innerText = roofSpaceSqFt + " sq.ft";
+        }
+    </script>
+</body>
+</html>
