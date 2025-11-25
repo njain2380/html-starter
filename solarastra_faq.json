@@ -1,0 +1,38 @@
+[
+  {
+    "q": "Who is eligible to apply for the PM Surya Ghar scheme?",
+    "a": "Only Residential Consumers or Residential Welfare Societies (RWA) are eligible. Commercial, industrial, and institutional consumers are generally not eligible for the residential subsidy on this portal."
+  },
+  {
+    "q": "What is the maximum Central Financial Assistance (CFA)/subsidy available?",
+    "a": "The total CFA is capped at ₹78,000 for systems larger than 3 kW. This is calculated as ₹30,000 per kW for the first 2 kW, and ₹18,000 per kW for additional capacity up to 3 kW."
+  },
+  {
+    "q": "What documents are mandatory during the application process?",
+    "a": "Mandatory documents include a recent Electricity Bill, Aadhaar Card, and Bank Account details (such as a Cancelled Cheque or Passbook copy) to facilitate the direct subsidy transfer."
+  },
+  {
+    "q": "How much shadow-free rooftop area is required for a 1 kW solar system?",
+    "a": "A 1 kW rooftop system typically requires about 10 square metres (approx. 107 sq. ft.) of shadow-free area for optimal installation, although this may vary based on module efficiency."
+  },
+  {
+    "q": "How long does it take to receive the subsidy amount after installation?",
+    "a": "Once the solar system is installed, inspected, and successfully commissioned, the subsidy amount is generally transferred directly to the beneficiary's bank account within 30 days of DISCOM approval."
+  },
+  {
+    "q": "Can I install the system using any vendor?",
+    "a": "No. For availing the CFA/subsidy, the rooftop solar system must be installed through an MNRE-registered vendor empanelled under the concerned Electricity Distribution Company (DISCOM)."
+  },
+  {
+    "q": "What is Net Metering?",
+    "a": "Net Metering uses a bi-directional meter to record the electricity consumed from the grid and the surplus electricity exported to the grid by your solar system. You only pay for the 'net' consumption."
+  },
+  {
+    "q": "What happens if there is a mismatch in name between the electricity bill and the bank account?",
+    "a": "The name of the consumer must be identical on both the bank account and the DISCOM electricity bill for the subsidy to be processed successfully. Any mismatch must be rectified with the bank or DISCOM."
+  },
+  {
+    "q": "Can I change my chosen vendor after application?",
+    "a": "Yes, a consumer may change their selected vendor on the portal, but this must be done before uploading the Vendor Consumer Work Agreement."
+  }
+]
