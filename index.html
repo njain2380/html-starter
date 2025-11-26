@@ -99,7 +99,7 @@
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-20">
                 <!-- Logo and Brand -->
                 <div class="flex-shrink-0 flex items-center">
                     <!-- INTEGRATED UPLOADED LOGO HERE (logo-orange.jpg) -->
@@ -857,11 +857,11 @@
             document.querySelector(`.tab-button[onclick*='${tabId}']`).classList.add('active');
         }
 // Load FAQs from faqs.json
-/*let faqData = [];
+let faqData = [];
 
 async function loadFaqs() {
     try {
-        const res = await fetch('faqs.json');
+        const res = await fetch('https://github.com/njain2380/solarastra/blob/main/faqs.json');
         faqData = await res.json();
         renderFaqs(faqData);
     } catch (error) {
@@ -906,7 +906,7 @@ searchInput.addEventListener('input', function () {
 });
 
 // Load FAQs on page load
-loadFaqs();*/
+loadFaqs();
         
 
         // Initial setup and calculation on load
