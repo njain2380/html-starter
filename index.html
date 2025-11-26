@@ -905,13 +905,14 @@ searchInput.addEventListener('input', function () {
     }
 });
 
-// Load FAQs on page load
-loadFaqs();
+
         
 
         // Initial setup and calculation on load
         window.onload = function() {
             calculatePreviews();
+            // Load FAQs on page load
+            loadFaqs();
         };
 
         // Initialize the EMI calculation
